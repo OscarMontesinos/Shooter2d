@@ -19,6 +19,7 @@ public class PjBase : MonoBehaviour, TakeDamage
 
     public Weapon weapon;
     public GameObject bullet;
+    public GameObject shootVFX;
     public float dmg;
     public float shootRate;
     public int shootBurst;

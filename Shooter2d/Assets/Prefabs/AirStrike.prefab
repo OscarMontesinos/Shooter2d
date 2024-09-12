@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 346c978f18a407847a7cf19c0f629b3a, type: 3}
-  m_Color: {r: 0.6603774, g: 0.47637764, b: 0.32084376, a: 0.23921569}
+  m_Color: {r: 0.8396226, g: 0.55607957, b: 0.32079923, a: 0.21176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   user: {fileID: 0}
   active: 0
   sprite: {fileID: 988186089733989946}
+  VFX: {fileID: 6514711117951341403, guid: e90e55ed0b56ccc409dfd6eb53841fac, type: 3}
   area: 20
   duration: 0
   direction: {x: 0, y: 0}
