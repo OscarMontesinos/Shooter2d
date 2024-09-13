@@ -10,6 +10,7 @@ public class Gunner : PjBase
     float airStrikeDelay;
     public float airStrikeCD;
     float actualAirStrikeCD;
+    public float airStrikeRange;
     public float airStrikeDuration;
     public float airStrikeSpd;
     public float airStrikeDmgPerSecond;
@@ -118,7 +119,13 @@ public class Gunner : PjBase
     {
         if (currentAirStrike == null)
         {
-           currentAirStrike = Instantiate(airStrike, UtilsClass.GetMouseWorldPosition(), new Quaternion(0, 0, 0, 0)).GetComponent<AirStrike>();
+            Vector3 destination = UtilsClass.GetMouseWorldPosition();
+            Vector3 dist = destination - transform.position;
+            if(dist.magnitude > airStrikeRange)
+            {
+                destination = transform.position + (dist.normalized * airStrikeRange);
+            }
+           currentAirStrike = Instantiate(airStrike, destination, new Quaternion(0, 0, 0, 0)).GetComponent<AirStrike>();
             airStrikeDelay = 0.25f;
         }
         else if (!currentAirStrike.active && airStrikeDelay <= 0)

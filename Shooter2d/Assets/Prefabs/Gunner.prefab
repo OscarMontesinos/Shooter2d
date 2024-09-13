@@ -446,7 +446,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   weapon: 0
   bullet: {fileID: 7034567536130549345, guid: 5db6c7c0ad1b6164f89c690fb8d5284f, type: 3}
-  dmg: 7
+  shootVFX: {fileID: 0}
+  dmg: 8.5
   shootRate: 0.07
   shootBurst: 0
   burstDelay: 0
@@ -474,8 +475,9 @@ MonoBehaviour:
   airStrike: {fileID: 5303582841746485687, guid: d9a89f583e379e2419be25066017e350, type: 3}
   currentAirStrike: {fileID: 0}
   airStrikeCD: 60
-  airStrikeDuration: 10
-  airStrikeSpd: 6
+  airStrikeRange: 20
+  airStrikeDuration: 13
+  airStrikeSpd: 4
   airStrikeDmgPerSecond: 50
 --- !u!58 &930715545394173157
 CircleCollider2D:
