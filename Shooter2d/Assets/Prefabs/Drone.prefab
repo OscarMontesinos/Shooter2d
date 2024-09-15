@@ -56,6 +56,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   weapon: 0
   bullet: {fileID: 7034567536130549345, guid: fd391897cb2972340b03db28994c3390, type: 3}
+  shootVFX: {fileID: 0}
   dmg: 7
   shootRate: 0.3
   shootBurst: 0
@@ -73,6 +74,9 @@ MonoBehaviour:
   habText: {fileID: 0}
   stunTime: 0
   team: 0
+  invisible: 0
+  particleInvisible: {fileID: 0}
+  invisibleTime: 0
   dashing: 0
   casting: 0
   ignoreSoftCastDebuff: 0
@@ -81,7 +85,7 @@ MonoBehaviour:
   hp: 0
   regenTime: 5
   hpRegenPercentagePerSecond: 17.5
-  hackable: 0
+  hackable: 1
   UI: {fileID: 5569781853798641047}
   targetsOnSight: []
   particleOnDie: {fileID: 6514711117951341403, guid: d770760a798b61a4b818ea2d5256e3e5, type: 3}

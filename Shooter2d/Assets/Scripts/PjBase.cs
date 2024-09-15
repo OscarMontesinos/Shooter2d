@@ -46,6 +46,11 @@ public class PjBase : MonoBehaviour, TakeDamage
 
     public int team;
 
+    public bool invisible;
+    public GameObject particleInvisible;
+    [HideInInspector]
+    public float invisibleTime;
+
     public bool dashing;
     public bool casting;
     public bool ignoreSoftCastDebuff;
@@ -121,6 +126,18 @@ public class PjBase : MonoBehaviour, TakeDamage
             stunBar.value = stunTime;
         }
 
+        if(invisibleTime > 0)
+        {
+            if (!invisible)
+            {
+                invisible = true;
+            }
+            invisibleTime -= Time.deltaTime; 
+        }
+        else if (invisible)
+        {
+            invisible = false;
+        }
 
         if (CompareTag("Player"))
         {
@@ -134,6 +151,11 @@ public class PjBase : MonoBehaviour, TakeDamage
             else
             {
                 timeOutOfCombat -= Time.deltaTime;
+            }
+
+            if(particleInvisible)
+            {
+                particleInvisible.SetActive(invisible);
             }
         }
     }
@@ -169,10 +191,12 @@ public class PjBase : MonoBehaviour, TakeDamage
 
     public virtual IEnumerator NormalShoot()
     {
+        invisibleTime = 0;
         yield return null;
     }
     public virtual IEnumerator SecondaryShoot()
     {
+        invisibleTime = 0;
         yield return null;
     }
     public virtual void Recharge()

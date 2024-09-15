@@ -57,6 +57,22 @@ public class Enemy : PjBase
         {
             targetsOnSight.Clear();
         }
+        else
+        {
+            List<PjBase> deletingList = new List<PjBase>();
+            foreach (PjBase target in targetsOnSight)
+            {
+                if(target.team == team || target.invisible)
+                {
+                    deletingList.Add(target);
+                }
+            }
+            
+            foreach (PjBase target in deletingList)
+            {
+                targetsOnSight.Remove(target);
+            }
+        }
 
         Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(transform.position, visionRange, GameManager.Instance.playerLayer + GameManager.Instance.enemyLayer);
         PjBase enemy;
@@ -68,7 +84,7 @@ public class Enemy : PjBase
             if (Vector3.Angle(pointer.transform.up, dir.normalized) < visionAngle / 2 && !Physics2D.Raycast(transform.position, dir, dir.magnitude, GameManager.Instance.wallLayer))
             {
                 enemy = enemyColl.GetComponent<PjBase>();
-                if (enemy.team != team)
+                if (enemy.team != team && !enemy.invisible)
                 {
                     targetsOnSight.Add(enemy);
                 }
