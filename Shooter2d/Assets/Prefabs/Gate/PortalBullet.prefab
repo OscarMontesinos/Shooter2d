@@ -339,7 +339,7 @@ MonoBehaviour:
   dmg: 0
   dmgMultiplierToBarriers: 1
   team: 0
-  speed: 20
+  speed: 35
   spdOverTime: 0
   range: 35
   _rigidbody: {fileID: 0}

@@ -447,13 +447,13 @@ MonoBehaviour:
   weapon: 0
   bullet: {fileID: 7034567536130549345, guid: 5db6c7c0ad1b6164f89c690fb8d5284f, type: 3}
   shootVFX: {fileID: 0}
-  dmg: 8.5
+  dmg: 10
   shootRate: 0.07
   shootBurst: 0
   burstDelay: 0
   shootCD: 0
   detour: 3
-  ammo: 160
+  ammo: 140
   currentAmmo: 0
   recharging: 0
   onAnim: 0
@@ -464,10 +464,13 @@ MonoBehaviour:
   habText: {fileID: 7315237915104891409}
   stunTime: 0
   team: 1
+  invisible: 0
+  particleInvisible: {fileID: 0}
+  invisibleTime: 0
   dashing: 0
   casting: 0
   ignoreSoftCastDebuff: 0
-  spd: 6.5
+  spd: 7.5
   mHp: 340
   hp: 0
   regenTime: 5

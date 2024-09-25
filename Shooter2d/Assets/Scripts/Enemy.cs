@@ -59,19 +59,7 @@ public class Enemy : PjBase
         }
         else
         {
-            List<PjBase> deletingList = new List<PjBase>();
-            foreach (PjBase target in targetsOnSight)
-            {
-                if(target.team == team || target.invisible)
-                {
-                    deletingList.Add(target);
-                }
-            }
-            
-            foreach (PjBase target in deletingList)
-            {
-                targetsOnSight.Remove(target);
-            }
+            DeleteNotValidTargets();
         }
 
         Collider2D[] enemiesHit = Physics2D.OverlapCircleAll(transform.position, visionRange, GameManager.Instance.playerLayer + GameManager.Instance.enemyLayer);
@@ -94,6 +82,8 @@ public class Enemy : PjBase
 
     public PjBase GetClosestTarget()
     {
+        DeleteNotValidTargets();
+
         PjBase closestTarget = null;
         Vector2 closestDir = Vector2.zero;
         foreach (PjBase target in targetsOnSight)
@@ -118,7 +108,22 @@ public class Enemy : PjBase
 
    
 
+    void DeleteNotValidTargets()
+    {
+        List<PjBase> deletingList = new List<PjBase>();
+        foreach (PjBase target in targetsOnSight)
+        {
+            if (target == null || target.team == team || target.invisible)
+            {
+                deletingList.Add(target);
+            }
+        }
 
+        foreach (PjBase target in deletingList)
+        {
+            targetsOnSight.Remove(target);
+        }
+    }
     public override void Die(PjBase killer)
     {
         if(particleOnDie != null)

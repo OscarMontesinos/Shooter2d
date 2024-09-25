@@ -12,6 +12,15 @@ public class MovingEnemy : Enemy
 
     public float pivotRange;
     public float minPivotRange;
+    public override void Update()
+    {
+        base.Update();
+        agent.speed = spd;
+        if(agent.speed < 2)
+        {
+            agent.speed = 2;
+        }
+    }
     public void SetPositionCloseToTarget(PjBase target)
     {
         Vector3 point = new Vector3(Random.Range(-pivotRange, pivotRange), Random.Range(-pivotRange, pivotRange), transform.position.z);

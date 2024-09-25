@@ -247,12 +247,13 @@ MonoBehaviour:
   animator: {fileID: 0}
   weapon: 0
   bullet: {fileID: 7034567536130549345, guid: 0281afc40e5d1c64a9bce264d7ea5eb3, type: 3}
-  dmg: 10
+  shootVFX: {fileID: 0}
+  dmg: 20
   shootRate: 0.075
   shootBurst: 0
   burstDelay: 0
   shootCD: 0
-  detour: 10
+  detour: 4
   ammo: 28
   currentAmmo: 0
   recharging: 0
@@ -264,6 +265,9 @@ MonoBehaviour:
   habText: {fileID: 7315237915104891409}
   stunTime: 0
   team: 1
+  invisible: 0
+  particleInvisible: {fileID: 0}
+  invisibleTime: 0
   dashing: 0
   casting: 0
   ignoreSoftCastDebuff: 0

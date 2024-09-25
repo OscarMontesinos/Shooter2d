@@ -41,7 +41,7 @@ public class Drone : MovingEnemy
             {
                 PjBase target = GetClosestTarget();
 
-                if (agent.remainingDistance < 3)
+                if (agent.isOnNavMesh && agent.remainingDistance < 3)
                 {
                     SetPositionCloseToTarget(target);
                 }
@@ -66,7 +66,7 @@ public class Drone : MovingEnemy
                     StartCoroutine(RestartIA());
                 }
             }
-            else
+            else if (agent.isOnNavMesh)
             {
                 if(DroneToFollow != null)
                 {
@@ -90,6 +90,10 @@ public class Drone : MovingEnemy
                 }
                 Vector2 lookTowards = agent.destination - transform.position;
                 transform.up = lookTowards.normalized;
+                StartCoroutine(RestartIA());
+            }
+            else
+            {
                 StartCoroutine(RestartIA());
             }
         }
