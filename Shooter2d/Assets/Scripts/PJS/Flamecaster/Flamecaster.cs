@@ -16,6 +16,7 @@ public class Flamecaster : PjBase
     public float fuelPerBomb;
     public float fuelPerSecond;
     public GameObject flameBomb;
+    public GameObject flameRangeShower;
     public GameObject shapeCircle;
     public GameObject shapeBoxWide;
     public GameObject shapeBoxLarge;
@@ -36,6 +37,7 @@ public class Flamecaster : PjBase
     {
         base.Awake();
         currentFuel = fuel;
+        flameRangeShower.transform.localScale = new Vector3(fireBombMaxRange * 2, fireBombMaxRange * 2, fireBombMaxRange * 2);
     }
     public override void Update()
     {
@@ -164,7 +166,7 @@ public class Flamecaster : PjBase
                     projectile2.team = team;
                     projectile2.user = this;
                     projectile2.dmg = dmg;
-                    projectile2.transform.localEulerAngles = new Vector3(0, 0, projectile2.transform.localEulerAngles.z + -detour * 1.5f);
+                    projectile2.transform.localEulerAngles = new Vector3(0, 0, projectile2.transform.localEulerAngles.z + -7.5f);
                 }
 
                 yield return new WaitForSeconds(burstDelay);
@@ -176,7 +178,7 @@ public class Flamecaster : PjBase
                     projectile3.team = team;
                     projectile3.user = this;
                     projectile3.dmg = dmg;
-                    projectile3.transform.localEulerAngles = new Vector3(0, 0, projectile3.transform.localEulerAngles.z + detour*1.5f);
+                    projectile3.transform.localEulerAngles = new Vector3(0, 0, projectile3.transform.localEulerAngles.z + 7.5f);
                 }
                 if (currentAmmo <= 0)
                 {
@@ -213,7 +215,6 @@ public class Flamecaster : PjBase
             }
         }
     }
-
     public override void AnimationCallHability()
     {
         base.AnimationCallHability();
@@ -244,5 +245,10 @@ public class Flamecaster : PjBase
         }
 
         bomb.SetUp(this, shape, fireBombMaxSpd,fireBombMinSpd, destination);
+    }
+
+    private void OnDrawGizmos()
+    {
+        flameRangeShower.transform.localScale = new Vector3(fireBombMaxRange * 2, fireBombMaxRange * 2, fireBombMaxRange * 2);
     }
 }
