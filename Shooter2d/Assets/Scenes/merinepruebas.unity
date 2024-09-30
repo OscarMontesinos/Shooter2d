@@ -13701,7 +13701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 930715545394173160, guid: e469fbd4205ef0646b2f301da39c428d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 930715545394173163, guid: e469fbd4205ef0646b2f301da39c428d, type: 3}
       propertyPath: m_RootOrder
@@ -13749,11 +13749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5770526919941660514, guid: e469fbd4205ef0646b2f301da39c428d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5770526919941660514, guid: e469fbd4205ef0646b2f301da39c428d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e469fbd4205ef0646b2f301da39c428d, type: 3}
@@ -14024,6 +14024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flamecaster
       objectReference: {fileID: 0}
+    - target: {fileID: 930715545394173160, guid: b240fef361ffb844aa853555d0d1e027, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 930715545394173163, guid: b240fef361ffb844aa853555d0d1e027, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14082,11 +14086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5770526919941660514, guid: b240fef361ffb844aa853555d0d1e027, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5770526919941660514, guid: b240fef361ffb844aa853555d0d1e027, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b240fef361ffb844aa853555d0d1e027, type: 3}

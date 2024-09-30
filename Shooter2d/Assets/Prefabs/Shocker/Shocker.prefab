@@ -249,7 +249,7 @@ MonoBehaviour:
   bullet: {fileID: 7034567536130549345, guid: 800f41337c0dee045a93658ad2fd79b5, type: 3}
   shootVFX: {fileID: 0}
   dmg: 19
-  shootRate: 0.09
+  shootRate: 0.075
   shootBurst: 0
   burstDelay: 0
   shootCD: 0

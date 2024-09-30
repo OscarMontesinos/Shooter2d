@@ -447,7 +447,7 @@ MonoBehaviour:
   weapon: 0
   bullet: {fileID: 7034567536130549345, guid: 5db6c7c0ad1b6164f89c690fb8d5284f, type: 3}
   shootVFX: {fileID: 0}
-  dmg: 10
+  dmg: 12
   shootRate: 0.07
   shootBurst: 0
   burstDelay: 0
